@@ -2,7 +2,7 @@
 
 function TourCard({ id, name, info, image, price, onRemove }) {
     return (
-      <div className="tour-card">
+      <div className="tour-card"> 
         <img src={image} alt={name} />
         <h2>{name}</h2>
         <h4>${price}</h4>
