@@ -6,8 +6,8 @@
 import TourCard from './TourCard';
 
 function Gallery({ tours, loading, error, removeTour, onRefresh }) {
-  if (loading) return <p>Loading tours...</p>;
-  if (error) return <p>{error}</p>;
+  if (loading) return <p>⏳ Loading tours...</p>;
+  if (error) return <p>⚠️ {error}</p>;
 
   if (tours.length === 0) {
     return (
