@@ -1,3 +1,5 @@
+// Tour card UI with tour info and remove button
+
 function TourCard({ id, name, info, image, price, onRemove }) {
     return (
       <div className="tour-card">
@@ -11,4 +13,15 @@ function TourCard({ id, name, info, image, price, onRemove }) {
   }
   
   export default TourCard;
+
+  // Task 4 - Reset View
+  
+  if (tours.length === 0) {
+    return (
+      <div>
+        <p>No tours left. Refresh to reload.</p>
+        <button onClick={onRefresh}>🔄 Refresh</button>
+      </div>
+    );
+  }
   
