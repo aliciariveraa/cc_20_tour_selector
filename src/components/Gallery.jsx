@@ -3,11 +3,13 @@
 
 // 🖼️ Gallery to display tour cards or UI messages
 
-import TourCard from './TourCard';
+
+import React from "react";
+import TourCard from "./TourCard";
 
 function Gallery({ tours, loading, error, removeTour, onRefresh }) {
-  if (loading) return <p>⏳ Loading tours...</p>;
-  if (error) return <p>⚠️ {error}</p>;
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>{error}</p>;
 
   if (tours.length === 0) {
     return (
@@ -21,7 +23,11 @@ function Gallery({ tours, loading, error, removeTour, onRefresh }) {
   return (
     <div className="gallery">
       {tours.map((tour) => (
-        <TourCard key={tour.id} {...tour} onRemove={removeTour} />
+        <TourCard
+          key={tour.id}
+          {...tour}
+          onRemove={removeTour}
+        />
       ))}
     </div>
   );
